@@ -1,6 +1,6 @@
 .PHONY: clean diff pep8
 
-REPO=sitescripts
+REPO=abpbot
 URL="https://hg.adblockplus.org/${REPO}/"
 
 ORIGINAL=original/${REPO}
@@ -10,7 +10,7 @@ venv:
 	virtualenv venv
 	venv/bin/pip install pep8 autopep8 pydiff
 	patch -p1 <pydiff.patch
-	touch venv/lib/python2.7/site-packages/pydiff.py # To recompile.
+	rm -f venv/lib/python2.7/site-packages/pydiff.pyc # To recompile.
 
 ${ORIGINAL}:
 	mkdir -p original
