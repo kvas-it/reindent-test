@@ -1,0 +1,15 @@
+--- a/venv/lib/python2.7/site-packages/pydiff.py	2016-04-14 21:18:11.000000000 +0200
++++ b/venv/lib/python2.7/site-packages/pydiff.py	2016-04-14 21:18:51.000000000 +0200
+@@ -41,10 +41,10 @@
+ 
+ def diff_bytecode_of_files(filename_a, filename_b):
+     """Return diff of the bytecode of the two files."""
+-    with open_with_encoding(filename_a) as file_a:
++    with open(filename_a) as file_a:
+         source_a = file_a.read()
+ 
+-    with open_with_encoding(filename_b) as file_b:
++    with open(filename_b) as file_b:
+         source_b = file_b.read()
+ 
+     return diff_bytecode(source_a, source_b,
