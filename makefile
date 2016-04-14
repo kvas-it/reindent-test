@@ -1,6 +1,6 @@
 .PHONY: clean diff pep8
 
-REPO=abpbot
+REPO=sitescripts
 URL="https://hg.adblockplus.org/${REPO}/"
 
 ORIGINAL=original/${REPO}
