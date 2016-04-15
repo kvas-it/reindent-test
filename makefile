@@ -23,7 +23,8 @@ ${REINDENTED}: ${ORIGINAL} venv
 
 diff: ${ORIGINAL} ${REINDENTED}
 	./pydiff.sh ${ORIGINAL} ${REINDENTED}
-	-grep -nr --include='*.py' __doc__ ${REINDENTED}
+	@if grep -nr --include='*.py' __doc__ ${REINDENTED}; then\
+		echo "WARNING: __doc__ is used in the code (see above)"; fi
 
 pep8: ${ORIGINAL} ${REINDENTED}
 	@echo "PEP8 violations in ${ORIGINAL}:"
