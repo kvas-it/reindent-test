@@ -23,6 +23,7 @@ ${REINDENTED}: ${ORIGINAL} venv
 
 diff: ${ORIGINAL} ${REINDENTED}
 	./pydiff.sh ${ORIGINAL} ${REINDENTED}
+	-grep -nr --include='*.py' __doc__ ${REINDENTED}
 
 pep8: ${ORIGINAL} ${REINDENTED}
 	@echo "PEP8 violations in ${ORIGINAL}:"
