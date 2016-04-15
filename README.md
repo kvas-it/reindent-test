@@ -2,29 +2,28 @@
 
 Test of the effectiveness and correctness of
 [autopep8](https://pypi.python.org/pypi/autopep8) for fixing PEP8
-violations. By default the target is
-[sitescripts](https://hg.adblockplus.org/sitescripts/)
-but that can be changed by adjusting `REPO` variable in the makefile.
+violations. By default it checks all repositories at https://hg.adblockplus.org/
+that are not forks of other repos and that contain Python code beyond
+`ensure_dependencies.py` (which is updated automatically).
 
 ## Usage
 
-To display the differences between the original and reindented versions
-using [pydiff](https://pypi.python.org/pypi/pydiff):
+To create the virtualenv:
 
-    $ make diff
+    $ make venv
 
-To display PEP8 statistics of the original and reindented versions:
+To check out the repositories, autopep8 them and run the checks:
 
-    $ make pep8
+    $ make checks
 
-To remove all created files:
+To remove all created files except for reports:
 
     $ make clean
 
 ## Notes about pydiff
 
 Pydiff ignores whitespace differences in docstrings (which autopep8 introduces
-when it reindents code). However, it detects whitespace differences other strings.
+when it reindents code). However, it detects whitespace differences in other strings.
 
 ### Patching
 

@@ -1,6 +1,6 @@
-.PHONY: clean all
+.PHONY: clean checks
 
-all: venv
+checks: venv
 	mkdir -p reports
 	python all_repos.py
 
